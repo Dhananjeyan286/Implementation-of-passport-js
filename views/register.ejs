@@ -1,0 +1,32 @@
+<div class="mt-5">
+    <div class="col-4 m-auto">
+        <div class="card card-body text-center">
+            <h3><i class="fas fa-user-plus fa-x"></i>     Register</h3>
+            <%- include ('partials/messages') %>
+            <form action="/users/register" method="POST">
+                <div class="mb-3 text-start">
+                  <label for="name" class="form-label">Name</label>
+                  <input type="text" class="form-control" id="name" name="name" placeholder="Enter your name" value="<%= typeof name != 'undefined' ? name:''%>"><!--here undefined means empty,so if name field is not empty but certain conditions like if passwords do not match occurs then when the page is reloaded all the data in the respective fields like name,email will not get deleted instead the data will be present even when the page is reloaded-->
+                </div>
+                <div class="mb-3 text-start">
+                    <label for="email" class="form-label ">Email ID</label>
+                    <input type="email" class="form-control" id="email" name="email" placeholder="Enter your email id" value="<%= typeof email != 'undefined' ? email:''%>">
+                  </div>
+                  <div class="mb-3 text-start">
+                    <label for="password" class="form-label">Password</label>
+                    <input type="password" class="form-control" id="password" name="password" placeholder="Enter your password" value="<%= typeof password != 'undefined' ? password:''%>">
+                  </div>
+                  <div class="mb-3 text-start">
+                    <label for="password2" class="form-label">Re-enter your password</label>
+                    <input type="password" class="form-control" id="password2" name="password2" placeholder="Re-enter your password" value="<%= typeof password2 != 'undefined' ? password2:''%>">
+                  </div>
+                  <div class="mb-3 text-start">
+                    <button type="submit" class="btn btn-danger" style="width: 100%;">Register</button>
+                  </div>
+              </form>
+              <div class="text-start">
+              <p class="lead">Already have an account?<a href="/users/login">Login</a></p>
+            </div>
+        </div>
+    </div>
+</div>
